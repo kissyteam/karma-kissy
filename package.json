@@ -1,0 +1,23 @@
+{
+  "name": "karma-kissy",
+  "version": "0.1.0",
+  "description": "A Karma plugin - adapter for kissy framework.",
+  "author": "Yuanyan Cao",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanyan/karma-kissy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuanyan/karma-kissy/issues"
+  },
+  "homepage": "https://github.com/yuanyan/karma-kissy",
+  "keywords": [
+    "karma-plugin",
+    "karma-framework",
+    "kissy"
+  ],
+  "peerDependencies": {
+    "karma": ">=0.10"
+  }
+}
