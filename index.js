@@ -5,16 +5,10 @@ var createPattern = function(path) {
   return {pattern: path, included: true, served: true, watched: false};
 };
 
-var createFramework = function(ver) {
-    return function(files) {
-        files.unshift(createPattern(path.join(__dirname, 'kissy', ver)));
-    };
-}
+var createFramework = function(files) {
+    var kissyPath = path.dirname(require.resolve('kissy'));
+    files.unshift(createPattern(path.join(kissyPath, 'seed.js')));
+};
 
-module.exports = {};
-
-fs.readdirSync(path.join(__dirname, 'kissy')).forEach(function(file) {
-    var framework = createFramework(file);
-    framework.$inject = ['config.files'];
-    module.exports['framework:' + path.basename(file, '.js')] = ['factory', framework];
-});
+createFramework.$inject = ['config.files'];
+module.exports['framework:kissy'] = ['factory', createFramework];
