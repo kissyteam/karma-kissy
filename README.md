@@ -30,3 +30,36 @@ module.exports = function(config) {
     
     //...
 ```
+
+Example
+-------
+
+```js
+// karma.conf.js
+module.exports = function(config) {
+    config.set({
+        files: [
+            {
+                pattern: 'src/package.js',
+                watched: true,
+                included: true,
+                served: true
+            },
+            {
+                pattern: 'test/index.js',
+                watched: true,
+                included: true,
+                served: true
+            },
+            {
+                pattern: 'src/**/*.js',
+                watched: true,
+                included: false,
+                served: true
+            }
+        ],
+        frameworks: ['mocha', 'sinon', 'chai', 'kissy'],
+        browsers: ['Chrome', 'PhantomJS']
+    });
+};
+```
